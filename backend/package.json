@@ -1,11 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "server.ts",
   "scripts": {
     "dev": "tsx server.ts",
-    "start": "node server.ts"
+    "start": "tsx server.ts"
   },
   "license": "ISC",
   "dependencies": {
