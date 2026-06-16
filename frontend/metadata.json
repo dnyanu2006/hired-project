@@ -1,0 +1,6 @@
+{
+  "name": "Job Portal Pro",
+  "description": "Full-stack job portal with User, Recruiter, and Admin roles. Includes job listings, applications, and email notifications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
