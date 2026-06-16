@@ -8,7 +8,10 @@ import cors from "cors";
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+  "http://localhost:5173",
+  "https://your-frontend-url.onrender.com"
+],
   credentials: true
 }));
 // uploads folder
@@ -34,7 +37,7 @@ async function startServer() {
     // API routes
     app.use("/api", apiRouter);
 
-    const PORT = 3000;
+    const PORT = process.env.PORT || 3000;
 
     app.listen(PORT, "0.0.0.0", () => {
       console.log(`Server running on http://localhost:${PORT}`);
