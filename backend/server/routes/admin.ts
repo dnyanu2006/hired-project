@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { User } from "../models/User";
-import { Job } from "../models/Job";
-import { Application } from "../models/Application";
-import { authenticate, requireRole } from "../middleware/auth";
+import { User } from "../models/User.ts";
+import { Job } from "../models/Job.ts";
+import { Application } from "../models/Application.ts";
+import { authenticate, requireRole } from "../middleware/auth.ts";
 
 const router = Router();
 

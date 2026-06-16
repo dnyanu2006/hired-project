@@ -1,9 +1,9 @@
 import { Router } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { User } from "../models/User";
-import { authenticate, AuthRequest } from "../middleware/auth";
-import { sendEmail } from "../utils/email";
+import { User } from "../models/User.ts";
+import { authenticate, AuthRequest } from "../middleware/auth.ts";
+import { sendEmail } from "../utils/email.ts";
 
 const router = Router();
 

@@ -1,8 +1,8 @@
 import { Router } from "express";
-import authRoutes from "./auth";
-import jobRoutes from "./jobs";
-import applicationRoutes from "./applications";
-import adminRoutes from "./admin";
+import authRoutes from "./auth.ts";
+import jobRoutes from "./jobs.ts";
+import applicationRoutes from "./applications.ts";
+import adminRoutes from "./admin.ts";
 
 const router = Router();
 

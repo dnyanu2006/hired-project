@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { Application } from "../models/Application";
-import { Job } from "../models/Job";
-import { User } from "../models/User";
-import { authenticate, requireRole, AuthRequest } from "../middleware/auth";
-import { sendEmail } from "../utils/email";
+import { Application } from "../models/Application.ts";
+import { Job } from "../models/Job.ts";
+import { User } from "../models/User.ts";
+import { authenticate, requireRole, AuthRequest } from "../middleware/auth.ts";
+import { sendEmail } from "../utils/email.ts";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
