@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-import { Application } from "../types";
+import { useAuth } from "../context/AuthContext.tsx";
+import { Application } from "../types.tsx";
 import { Building, Calendar, CheckCircle, XCircle, Clock } from "lucide-react";
 
 export function MyApplications() {

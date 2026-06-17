@@ -11,28 +11,7 @@ export function JobsList() {
   const [location, setLocation] = useState("");
   const [type, setType] = useState("");
 
-  /*const fetchJobs = async () => {
-    setLoading(true);
-    let url = "http://localhost:3000/api/jobs?";
-    if (search) url += `search=${search}&`;
-    if (location) url += `location=${location}&`;
-    if (type) url += `type=${type}&`;
-
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      setJobs(data);
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchJobs();
-  }, []);*/
-
+  
  const fetchJobs = async () => {
   console.log("🔥 fetchJobs STARTED");
   setLoading(true);
