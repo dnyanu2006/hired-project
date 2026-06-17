@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-import { useToast } from "../context/ToastContext";
-import { Job } from "../types";
+import { useAuth } from "../context/AuthContext.tsx";
+import { useToast } from "../context/ToastContext.tsx";
+import { Job } from "../types.tsx";
 import { MapPin, DollarSign, Briefcase, Building, ChevronLeft } from "lucide-react";
 
 export function JobDetails() {
@@ -18,7 +18,7 @@ export function JobDetails() {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/jobs/${id}`);
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs/${id}`);
         if (res.ok) {
           setJob(await res.json());
         } else {
@@ -56,7 +56,7 @@ export function JobDetails() {
       formData.append("jobId", id as string);
       formData.append("resume", resumeFile);
 
-      const res = await fetch("http://localhost:3000/api/applications", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/applications`, {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`

@@ -15,7 +15,7 @@ console.log("EMAIL:", email);
 console.log("PASSWORD:", password);
 
 const handleLogin = async () => {
-  const res = await axios.post("/api/auth/login", {
+  const res = await axios.post("https://hired-project.onrender.com/api/login", {
     email,
     password
   });
@@ -25,7 +25,7 @@ const handleLogin = async () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3000/api/auth/login", {
+      const res = await fetch("https://hired-project.onrender.com/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

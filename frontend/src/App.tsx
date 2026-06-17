@@ -4,19 +4,19 @@
  */
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
-import { ToastProvider } from "./context/ToastContext";
-import { Navbar } from "./components/Navbar";
-import { ProtectedRoute } from "./components/ProtectedRoute";
+import { AuthProvider } from "./context/AuthContext.tsx";
+import { ToastProvider } from "./context/ToastContext.tsx";
+import { Navbar } from "./components/Navbar.tsx";
+import { ProtectedRoute } from "./components/ProtectedRoute.tsx";
 
-import { Landing } from "./pages/Landing";
-import { Login } from "./pages/Login";
-import { Register } from "./pages/Register";
-import { JobsList } from "./pages/JobsList";
-import { JobDetails } from "./pages/JobDetails";
-import { MyApplications } from "./pages/MyApplications";
-import { RecruiterDashboard } from "./pages/RecruiterDashboard";
-import { AdminDashboard } from "./pages/AdminDashboard";
+import { Landing } from "./pages/Landing.tsx";
+import { Login } from "./pages/Login.tsx";
+import { Register } from "./pages/Register.tsx";
+import { JobsList } from "./pages/JobsList.tsx";
+import { JobDetails } from "./pages/JobDetails.tsx";
+import { MyApplications } from "./pages/MyApplications.tsx";
+import { RecruiterDashboard } from "./pages/RecruiterDashboard.tsx";
+import { AdminDashboard } from "./pages/AdminDashboard.tsx";
 
 export default function App() {
   return (

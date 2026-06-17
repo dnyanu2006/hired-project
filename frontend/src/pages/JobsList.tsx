@@ -38,7 +38,7 @@ export function JobsList() {
   setLoading(true);
 
   try {
-    const res = await fetch("http://localhost:3000/api/jobs");
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs`);
 
     console.log("🔥 response received:", res);
 

@@ -3,7 +3,7 @@ import express from "express";
 import path from "path";
 import fs from "fs";
 import mongoose from "mongoose";
-import apiRouter from "./server/routes/auth.ts";
+import apiRouter from "./server/routes/index.ts";
 
 import cors from "cors";
 const app = express();
@@ -11,10 +11,11 @@ app.use(express.json());
 app.use(cors({
   origin: [
   "http://localhost:5173",
-  "https://your-frontend-url.onrender.com"
+  //"https://your-frontend-url.onrender.com"
 ],
   credentials: true
 }));
+
 // uploads folder
 const uploadDir = path.join(process.cwd(), "uploads");
 if (!fs.existsSync(uploadDir)) {
@@ -34,11 +35,11 @@ async function startServer() {
     app.get("/api/health", (req, res) => {
       res.json({ status: "ok" });
     });
-
+const PORT = Number(process.env.PORT) || 3000;
     // API routes
     app.use("/api", apiRouter);
 
-    const PORT = process.env.PORT || 3000;
+  
 
     app.listen(PORT, "0.0.0.0", () => {
       console.log(`Server running on http://localhost:${PORT}`);

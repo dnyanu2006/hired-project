@@ -16,7 +16,7 @@ export function RecruiterDashboard() {
 
   const fetchMyJobs = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/jobs/me/managed", {
+      const res = await fetch("https://hired-project.onrender.com/api/jobs/me/managed", {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.ok) setJobs(await res.json());
@@ -32,7 +32,7 @@ export function RecruiterDashboard() {
   const handleCreateJob = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3000/api/jobs", {
+      const res = await fetch("https://hired-project.onrender.com/api/jobs", {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify(formData)
@@ -52,7 +52,7 @@ export function RecruiterDashboard() {
   const deleteJob = async (id: string) => {
     if (!confirm("Are you sure you want to delete this job?")) return;
     try {
-      const res = await fetch(`http://localhost:3000/api/jobs/${id}`, {
+      const res = await fetch(`https://hired-project.onrender.com/api/jobs/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -69,7 +69,7 @@ export function RecruiterDashboard() {
     setSelectedJob(jobId);
     setView("manage");
     try {
-      const res = await fetch(`http://localhost:3000/api/applications/job/${jobId}`, {
+      const res = await fetch(`https://hired-project.onrender.com/api/applications/job/${jobId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.ok) setApplications(await res.json());
@@ -80,7 +80,7 @@ export function RecruiterDashboard() {
 
   const updateStatus = async (appId: string, status: "accepted" | "rejected") => {
     try {
-      const res = await fetch(`http://localhost:3000/api/applications/${appId}/status`, {
+      const res = await fetch(`https://hired-project.onrender.com/api/applications/${appId}/status`, {
         method: "PUT",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({ status })

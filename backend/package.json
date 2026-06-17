@@ -6,7 +6,7 @@
   "main": "server.ts",
   "scripts": {
     "dev": "tsx server.ts",
-    "start": "npx tsx server.ts"
+    "start": "node --import tsx server.ts"
   },
   "license": "ISC",
   "dependencies": {

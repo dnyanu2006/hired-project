@@ -12,7 +12,7 @@ export function MyApplications() {
   useEffect(() => {
     const fetchApps = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/applications/me", {
+        const res = await fetch("https://hired-project.onrender.com/api/applications/me", {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (res.ok) {
