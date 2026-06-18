@@ -222,7 +222,7 @@ export function RecruiterDashboard() {
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-500">
                           {app.resumeUrl ? (
   <a
-    href={`http://localhost:3000${app.resumeUrl}`}
+    href={`https://hired-project.onrender.com${app.resumeUrl}`}
     target="_blank"
     rel="noopener noreferrer"
     className="text-indigo-600 hover:text-indigo-800 underline uppercase text-[10px] font-black tracking-widest"

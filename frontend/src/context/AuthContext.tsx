@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/me`, {
+      const res = await fetch(`https://hired-project.onrender.com/api/auth/me`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
