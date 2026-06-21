@@ -17,7 +17,7 @@ const getTransporter = () => {
 
 export const sendEmail = async (to: string, subject: string, html: string) => {
   try {
-    console.log("SMTP_USER:", process.env.SMTP_USER);
+    console.log("SMTP USER:", process.env.SMTP_USER);
 
     const transporter = getTransporter();
 
@@ -28,8 +28,8 @@ export const sendEmail = async (to: string, subject: string, html: string) => {
       html,
     });
 
-    console.log("Email sent:", info.messageId);
+    console.log("EMAIL SENT SUCCESS:", info.messageId);
   } catch (error) {
-    console.error("Email sending failed:", error);
+    console.error("EMAIL FAILED FULL ERROR:", error);
   }
 };
