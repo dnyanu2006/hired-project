@@ -17,13 +17,18 @@ const getTransporter = () => {
 
 export const sendEmail = async (to: string, subject: string, html: string) => {
   try {
+    console.log("SMTP_USER:", process.env.SMTP_USER);
+
     const transporter = getTransporter();
-    await transporter.sendMail({
+
+    const info = await transporter.sendMail({
       from: `"Job Portal" <${process.env.SMTP_USER}>`,
       to,
       subject,
       html,
     });
+
+    console.log("Email sent:", info.messageId);
   } catch (error) {
     console.error("Email sending failed:", error);
   }

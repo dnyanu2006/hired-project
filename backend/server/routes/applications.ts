@@ -13,15 +13,7 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
 
-/*const storage = multer.diskStorage({
-  destination: function (req: Request, file: Express.Multer.File, cb: (error: Error | null, destination: string) => void) {
-    cb(null, uploadDir);
-  },
-  filename: function (req: Request, file: Express.Multer.File, cb: (error: Error | null, filename: string) => void) {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
-  }
-});*/
+
 const storage = multer.diskStorage({
   destination: function (req: Request, file: Express.Multer.File, cb: (error: Error | null, destination: string) => void) {
     cb(null, uploadDir);
@@ -141,7 +133,15 @@ router.put("/:id/status", authenticate, requireRole(["recruiter"]), async (req: 
         <p>Your application for <b>${j.title}</b> at <b>${j.company}</b> has been <b>${status}</b>.</p>
       </div>
     `;
-    await sendEmail(u.email, `Application Status: ${status.toUpperCase()}`, htmlBody);
+    console.log("Sending acceptance email to:", u.email);
+
+await sendEmail(
+  u.email,
+  `Application Status: ${status.toUpperCase()}`,
+  htmlBody
+);
+
+console.log("Acceptance email function completed");
 
     res.json(app);
   } catch (error) {
