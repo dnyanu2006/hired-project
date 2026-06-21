@@ -11,7 +11,8 @@ app.use(express.json());
 app.use(cors({
   origin: [
   "http://localhost:5173",
-  "https://hired-project-beta.vercel.app"
+  "https://hired-project-beta.vercel.app",
+  "https://hired-project-pied.vercel.app",
 ],
   credentials: true
 }));
