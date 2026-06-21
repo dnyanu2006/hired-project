@@ -13,7 +13,7 @@ export function Login() {
   const navigate = useNavigate();
 console.log("EMAIL:", email);
 console.log("PASSWORD:", password);
-
+console.log("LOGIN REQUEST URL:", "https://hired-project.onrender.com/api/auth/login");
 const handleLogin = async () => {
   const res = await axios.post("https://hired-project.onrender.com/api/auth/login", {
     email,
